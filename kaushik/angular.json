@@ -1,9 +1,10 @@
+
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "codaangular": {
+    "lab1": {
       "root": "",
       "sourceRoot": "src",
       "projectType": "application",
@@ -13,7 +14,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/codaangular",
+            "outputPath": "dist/lab1",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -57,18 +58,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "codaangular:build"
+            "browserTarget": "lab1:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "codaangular:build:production"
+              "browserTarget": "lab1:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "codaangular:build"
+            "browserTarget": "lab1:build"
           }
         },
         "test": {
@@ -102,8 +103,7 @@
         }
       }
     },
-    people call me cau
-    "codaangular-e2e": {
+    "lab1-e2e": {
       "root": "e2e/",
       "projectType": "application",
       "prefix": "",
@@ -112,11 +112,11 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "codaangular:serve"
+            "devServerTarget": "lab1:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "codaangular:serve:production"
+              "devServerTarget": "lab1:serve:production"
             }
           }
         },
@@ -132,5 +132,5 @@
       }
     }
   },
-  "defaultProject": "codaangular"
+  "defaultProject": "lab1"
 }

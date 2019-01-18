@@ -1,0 +1,90 @@
+<!-- The content below is only a placeholder and can be replaced.
+<div style="text-align:center">
+  <h1 class="h1style">
+    Welcome to {{ title }}!
+</h1>
+</div>
+<div>
+<h1>select the month</h1>
+<select (change) = "changemonths($event.target.value)">
+  <option *ngFor ="let i of months">{{i}}</option>
+</select>  
+<br><br>
+<div class="divstyle">
+  <span *ngIf = "isavailable; else condition1">condition is valid</span>
+  <ng-template #condition1>condition is invaild</ng-template>
+</div>
+<button (click)="myfunction($event)">Click me</button>
+<div *ngFor = "let p of people">
+{{p?.name?.toUpperCase()}}<br/>
+{{p?.age}}<br/>
+{{p?.country}}<br/>
+</div>
+<ul *ngFor = "let person of people" [ngSwitch] = "person.country">
+<li *ngSwitchCase = "'UK'"
+        class = "onstate">{{ person.name}} ({{person.country}})
+      </li>
+
+      <li *ngSwitchCase = "'mars'"
+        class = "onstate">{{ person.name}} ({{person.country}})
+      </li>
+      <li *ngSwitchCase = "'jupiter'"
+        class = "offstate">{{ person.name}} ({{person.country}})
+      </li>
+      <li *ngSwitchCase = "'june'"
+        class = "lsstate">{{ person.name}} ({{person.country}})
+      </li>
+      <li *ngSwitchDefault
+      class = "hsstate">{{ person.name}} ({{person.country}})
+    </li>
+</ul>
+
+OnKey Event:<input  (keyup)= "onKey($event)">
+<p>{{values}}</p>
+OnKey Event:<input #box (keyup) = "onKey2(box.value)">
+<p>{{values2}}</p>
+On Enter : <input #box1 (keyup.enter) = "onEnter(box1.value)">
+<p>{{values3}}</p>
+Onblur event: <input #box2 (blur) = "update(box2.value)" (Keyup.enter) = "update(box3.value)">
+<p>{{values4}}</p>
+
+<input #box3 (keyup) = "0">
+<p>{{box3.value}}</p>
+<input #newHero (keyup.enter) = "addHero(newHero.value)" (blur) = "addHero(newHero.value); newHero.value =' ' ">
+<button (click) = "addHero(newHero.value)">add</button>
+<ul>
+  <li *ngFor="let hero of heroes">{{hero}}
+</li>
+</ul>
+
+<div>
+  <h1>uppercase pipe</h1>
+  <h1>{{title|uppercase}}</h1>
+  <h1>lowercase pipe</h1>
+  <h1>{{title|lowercase}}</h1>
+  <h1>currency pipe</h1>
+  <b>{{6589.23|currency:"USD"}}</b><br>
+  <b>{{6589.23|currency:"USD":true}}</b>
+  <h1>Date pipe</h1>
+  <b>{{todaydate|date:'d/M/y'}}</b><br>
+  <b>{{todaydate|date:'shortTime'}}</b>
+  <h1>decimal pipe</h1>
+  <b>{{454.78787814|number:'3.4-4'}}</b>//3 is maininterger,4-4 are for intergers to be displayed
+</div>
+<div>
+  <h1>json pipe</h1>
+  <b>{{people|json}}</b>
+  <b>{{jsonval|json}}</b>
+  <h1>Percent pipe</h1>
+  <b>{{00.54565|percent}}</b>
+  <h1>slice pipe</h1>
+  <h1>{{months|slice:2:6}}</h1>
+  <h1>Custom pipe</h1>
+  <b>square root  of 25 is:{{25|sqrt}}</b>
+</div> -->
+
+<div>
+  <app-header></app-header>
+  <router-outlet></router-outlet>
+  <app-footer></app-footer>
+</div>
