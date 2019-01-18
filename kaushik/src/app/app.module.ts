@@ -12,6 +12,7 @@ import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { UserloginComponent } from './userlogin/userlogin.component';
 import { MainpageComponent } from './mainpage/mainpage.component';
+import { FirstManComponent } from './first-man/first-man.component';
 
 const appRoutes: Routes = [
   {
@@ -30,7 +31,8 @@ const appRoutes: Routes = [
     HeaderComponent,
     FooterComponent,
     UserloginComponent,
-    MainpageComponent
+    MainpageComponent,
+    FirstManComponent
   ],
   imports: [
     BrowserModule,
