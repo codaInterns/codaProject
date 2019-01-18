@@ -1,0 +1,72 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div style="text-align:center">
+  <h1 class="mystyle">
+    Welcome to {{ title }}!
+  </h1>
+  <select (change)="changemonths($event)">
+    <option *ngFor="let i of months">{{i}}</option>
+  </select>
+  <div>
+    <span *ngIf="isAvailable; else condition1">Condition is valid..</span>
+    <ng-template #condition1>Condition is invalid</ng-template>
+  </div>
+</div>
+<button (click)="myClickFunction($event)">Click me</button><br /><br />
+{{months[0]}}
+<div *ngFor="let p of people">
+  {{p?.name?.toUpperCase()}}<br>
+  {{p?.age}}<br>
+  {{p?.country}}<br>
+</div>
+<select (change)="changemonths($event.target.value)">
+  <option *ngFor="let p of people">{{p.name}}</option>
+</select>
+
+<ul *ngFor="let p of people" [ngSwitch]="p.country">
+  <li *ngSwitchCase="'UK'" class="onstate">{{p.name}}  ({{p.country}})</li>
+  <li *ngSwitchCase="'USA'" class="offstate">{{p.name}} ({{p.country}})</li>
+  <li *ngSwitchCase="'HK'" class="isstate">{{p.name}}({{p.country}})</li>
+  <li *ngSwitchDefault class="hsstate">{{p.name}}({{p.country}})</li>
+
+</ul>
+
+OnKey Event:<input (keyup)="onKey($event)" />
+<p>{{values}}</p>
+
+OnKey Event with value :<input #box (keyup)="onKey2(box.value)">
+<p>{{values2}}</p>
+
+
+On Enter :<input #box2 (keyup.enter)="onEnter(box2.value)">
+<p>{{values3}}</p>
+
+
+OnBlur event:<input #box3 (blur)="update(box3.value)" (keyup.enter)="update(box3.value)">
+<p>{{values4}}</p>
+
+<input #newHero (keyup.enter)="addHero(newHero.value)" (blur)="addHero(newHero.value); newHero.value='' " />
+<button (click)="addHero(newHero.value)">add</button>
+<ul>
+  <li *ngFor="let i of heroes">{{i}}</li>
+</ul>
+
+
+<h1>Uppercase pipe</h1>
+<b>{{title|uppercase}}</b><br />
+<b>{{title|lowercase}}</b><br />
+<b>{{7495.56|currency:'USD':true}}</b><br />
+<b>{{todaydate|date:'d/M/y'}}</b>
+
+<br /><b>{{234.5445|number:'3.2-2'}}</b>
+
+<p>{{people|json}}</p>
+<p>{{00.2323|percent}}</p>
+
+<p>{{months|slice:2:6}}</p>
+
+<h1>Square root of 144</h1>
+<b>{{144|sqrt}}</b>
+
+<button (click)="showConfig()">Enter </button>
+<h1>{{peeps|json}}</h1>
+<router-outlet></router-outlet>
